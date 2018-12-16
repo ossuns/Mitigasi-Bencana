@@ -985,16 +985,16 @@
         },
         {
             "name": "illuminate/redis",
-            "version": "v5.7.15",
+            "version": "5.7.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/redis.git",
-                "reference": "576684c0e88dec6a4722ac5af6895e8e98726df4"
+                "reference": "3d14d0b1abe4d7e2a847af37a1c4fe8005549398"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/redis/zipball/576684c0e88dec6a4722ac5af6895e8e98726df4",
-                "reference": "576684c0e88dec6a4722ac5af6895e8e98726df4",
+                "url": "https://api.github.com/repos/illuminate/redis/zipball/3d14d0b1abe4d7e2a847af37a1c4fe8005549398",
+                "reference": "3d14d0b1abe4d7e2a847af37a1c4fe8005549398",
                 "shasum": ""
             },
             "require": {
@@ -1026,7 +1026,7 @@
             ],
             "description": "The Illuminate Redis package.",
             "homepage": "https://laravel.com",
-            "time": "2018-10-18T03:39:45+00:00"
+            "time": "2018-12-03T14:19:22+00:00"
         },
         {
             "name": "illuminate/session",

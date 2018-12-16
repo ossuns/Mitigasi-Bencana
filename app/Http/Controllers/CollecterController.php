@@ -17,20 +17,23 @@ class CollecterController extends Controller
 
     public function __construct(Request $request)
     {
-
+        //menerima request
         $this->incomingRequest = new IncomingRequest();
         $this->incomingRequest->tag = $request->input('tag');
         $this->incomingRequest->data = $request->input('data');
-
         
     }
 
     public function show($tag) {
-        return response()->json(app('redis')->lrange($tag, 0, -1));
+        //ambil semua list dan tampilkan
+        return response($this->stringToJson(app('redis')->lrange($tag,0,-1)))
+            ->header('Content-Type', 'application/json');
     }
     public function add(Request $request) {
         $this->validation($request);
-        return app('redis')->rpush($this->incomingRequest->tag, $this->incomingRequest->data);
+
+        app('redis')->rpush($this->incomingRequest->tag, $this->getJson());
+        return response($this->getJson(), 200);
     }
     public function delete($tag) {
         return app('redis')->del($tag);
@@ -39,10 +42,27 @@ class CollecterController extends Controller
         
     }
 
-    protected function validation($request) {
+    private function validation($request) {
         $this->validate($request, [
             'tag' => 'required',
             'data' => 'required'
         ]);
     }
+
+    private function getJson() {
+        $arr = array();
+            foreach($this->incomingRequest->data as $key => $value) {
+                $arr[$key] = $value;
+            }
+
+        return json_encode($arr);
+    }
+    private function stringToJson($arr) {
+        $str = '[';
+        for($i = 0; $i < count($arr); $i++) {
+            !($i == count($arr)-1) ? $str .= $arr[$i]."," : $str .= $arr[$i]."]" ;
+        }
+        return $str;
+    }
+    
 }
