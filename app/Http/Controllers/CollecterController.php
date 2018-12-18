@@ -34,6 +34,8 @@ class CollecterController extends Controller
         return response($this->stringToJson(app('redis')->lrange($tag,-1,-1)))
             ->header('Content-Type', 'application/json');
     }
+
+    //method function tambah
     public function add(Request $request) {
         $this->validation($request);
 
