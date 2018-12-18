@@ -18,13 +18,16 @@ $router->group(
     ['prefix'=>'api'], function() use ($router) {
         //say hello
         $router->get('', function() {
-            return 'you got response!';
+            //return 'you got response!';
+            return view('banjir');
         });
 
         //create
         $router->post('', ['uses'=>'CollecterController@add']);
         //read
         $router->get('{tag}', ['uses'=>'CollecterController@show']);
+
+
         $router->get('{tag}/latest', ['uses'=>'CollecterController@showLatest']);
         //delete
         $router->delete('{tag}', ['uses'=>'CollecterController@delete']);
