@@ -58,11 +58,13 @@ class CollecterController extends Controller
         return json_encode($arr);
     }
     private function stringToJson($arr) {
-        $str = '[';
-        for($i = 0; $i < count($arr); $i++) {
-            !($i == count($arr)-1) ? $str .= $arr[$i]."," : $str .= $arr[$i]."]" ;
-        }
-        return $str;
+        if(count($arr) > 0) {
+            $str = '[';
+            for($i = 0; $i < count($arr); $i++) {
+                !($i == count($arr)-1) ? $str .= $arr[$i]."," : $str .= $arr[$i]."]" ;
+            }
+            return $str;
+        } else return '[]';
     }
     
 }
