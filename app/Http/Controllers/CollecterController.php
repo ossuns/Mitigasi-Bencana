@@ -59,6 +59,7 @@ class CollecterController extends Controller
         ]);
     }
 
+    //method function getJson
     private function getJson() {
         $arr = array();
             foreach($this->incomingRequest->data as $key => $value) {
