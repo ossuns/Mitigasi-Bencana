@@ -51,6 +51,7 @@ class CollecterController extends Controller
         
     }
 
+    //method function validasi
     private function validation($request) {
         $this->validate($request, [
             'tag' => 'required',
