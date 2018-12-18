@@ -25,6 +25,7 @@ $router->group(
         $router->post('', ['uses'=>'CollecterController@add']);
         //read
         $router->get('{tag}', ['uses'=>'CollecterController@show']);
+        $router->get('{tag}/latest', ['uses'=>'CollecterController@showLatest']);
         //delete
         $router->delete('{tag}', ['uses'=>'CollecterController@delete']);
         $router->delete('', ['uses'=>'CollecterController@deleteAll']);

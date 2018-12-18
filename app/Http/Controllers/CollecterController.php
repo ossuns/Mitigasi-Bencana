@@ -29,6 +29,11 @@ class CollecterController extends Controller
         return response($this->stringToJson(app('redis')->lrange($tag,0,-1)))
             ->header('Content-Type', 'application/json');
     }
+    public function showLatest($tag) {
+        //ambil semua list dan tampilkan
+        return response($this->stringToJson(app('redis')->lrange($tag,-1,-1)))
+            ->header('Content-Type', 'application/json');
+    }
     public function add(Request $request) {
         $this->validation($request);
 
