@@ -42,6 +42,8 @@ class CollecterController extends Controller
         app('redis')->rpush($this->incomingRequest->tag, $this->getJson());
         return response($this->getJson(), 200);
     }
+
+    //method function delete
     public function delete($tag) {
         return app('redis')->del($tag);
     }
