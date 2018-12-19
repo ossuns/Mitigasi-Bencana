@@ -26,6 +26,7 @@ $router->group(
         $router->post('', ['uses'=>'CollecterController@add']);
         //read
         $router->get('{tag}', ['uses'=>'CollecterController@show']);
+        $router->get('{tag}/showAppend', ['uses'=>'CollecterController@showAppend']);
 
 
         $router->get('{tag}/latest', ['uses'=>'CollecterController@showLatest']);

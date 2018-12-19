@@ -1,0 +1,20 @@
+[
+    {
+        "id": "1",
+        "name": "Computer Architecture",
+        "Category": "Computers",
+        "Price": "125.60"
+    },
+    {
+        "id": "2",
+        "name": "Asp.Net 4 Blue Book",
+        "Category": "Programming",
+        "Price": "56.00"
+    },
+    {
+        "id": "3",
+        "name": "Popular Science",
+        "Category": "Science",
+        "Price": "210.40"
+    }
+]
